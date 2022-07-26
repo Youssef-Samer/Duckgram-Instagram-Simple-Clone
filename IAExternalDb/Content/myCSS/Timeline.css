@@ -1,0 +1,359 @@
+﻿.containerPostes {
+    width: 600px;
+    background-color: #121212;
+    margin-top: 30px;
+}
+
+.friendReq {
+    padding: 30px 0;
+    width: 300px;
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    color: aliceblue;
+    background-color: #151615;
+    border: 2px solid #02a302;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+
+    .friendReq .Req {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+.profile-name-req {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 2px;
+    color: #deebde;
+}
+
+.friendReq .Req .accept {
+    background-color: #adf7a0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.friendReq .Req .reject {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.friendReq P {
+    padding-left: 90px;
+    color: #adf7a0;
+    font-weight: 700;
+}
+
+.endMsg {
+    width: 600px;
+    border: 1px solid rgb(182,182,182);
+    background-color: #151615;
+    border-radius: 4px;
+}
+
+    .endMsg p {
+        color: #adf7a0;
+        padding: 20px;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(12 12 12);
+}
+
+.container {
+    width: 600px;
+    border: 1px solid rgb(0 180 0);
+    background-color: #151615;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+    .profile-pic img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+    color: #deebde;
+}
+
+.img-content {
+    width: 599px;
+    height: 485px;
+}
+
+    .img-content img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+    .bottom-content .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bottom-content .profile-details {
+        margin: 5px 0;
+        margin-left: 410px;
+        margin-top: -95px;
+    }
+
+.profile-details .profile-pic {
+    width: 25px;
+    height: 25px;
+}
+
+.profile-details p {
+    padding-left: 5px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #a8b7a8;
+}
+
+    .profile-details p span {
+        font-weight: 700;
+        color: #adf7a0;
+    }
+
+.Like {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.Liked {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.DisLiked {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.DisLike {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.icons .icon + .icon {
+    margin-left: 20px;
+}
+
+.save svg:hover {
+    fill: gray;
+    cursor: pointer;
+}
+
+.comment-section {
+    border-top: 1px solid rgb(182,182,182);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.search {
+    width: 100%;
+    height: 40px;
+}
+
+    .search input {
+        width: 90%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        padding: 15px;
+        background-color: #292929;
+        color: white;
+        float: right;
+        margin-right: 10px;
+        border-radius: 15px;
+    }
+
+.comment-place {
+    justify-content: space-between;
+    padding: 20px 5px;
+    color: #deebde;
+    margin-top: 19px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: auto;
+    max-width: 500px;
+}
+
+    .comment-place .name {
+        font-weight: 700;
+        text-decoration: none;
+        color: #57b684;
+    }
+
+    .comment-place .coCon {
+        padding-left: 5px;
+    }
+
+.search .emoji {
+    position: absolute;
+    top: 55%;
+    left: 2%;
+    transform: translate(-50%, -50%);
+}
+
+.post {
+    color: #adf7a0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.CommentOwnerImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+}
+
+.icons.flow {
+    margin-bottom: 60px;
+}
+
+.CommentText {
+}
+
+#Comments {
+}
+
+#myCaption {
+    color: aqua;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.SearchDiv {
+    margin-left: -400px;
+    margin-left: -400px;
+    padding: 30px 0;
+    width: 300px;
+    position: fixed;
+    top: 90px;
+    color: aliceblue;
+    background-color: #151615;
+    border: 2px solid #02a302;
+    border-radius: 20px;
+}
+
+.ASPinput input {
+    background: #f0f0f0;
+    margin-bottom: 8px;
+    color: #464646;
+    font-size: 14px;
+    border-radius: 2px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+input:not(input[type="submit"]):not(.commentpost) {
+    outline: none;
+    background-color: #eeeeee;
+    border: 1px solid #9b9b9b;
+    width: 270px;
+    height: 35px;
+    padding-left: 10px;
+    margin-left: 13px;
+}
+
+input[type="submit"] {
+    width: 300px;
+    height: 40px;
+    background-color: #10a2ff;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10.8px;
+    font-family: system-ui;
+    font-weight: 600;
+    font-size: larger;
+    padding-bottom: 3.8px;
+    color: white;
+    font-style: oblique;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+
+.ASPinput button {
+    background-color: #adf7a0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 120px;
+}
+
+
+
+.myCaption {
+    margin-top: 15px;
+    margin-left: 7px;
+}
+
+    .myCaption a:not(span) {
+        font-weight: 600;
+        text-decoration: none;
+        color: lawngreen;
+    }
+
+    .myCaption span {
+        font-weight: 300;
+        color: white;
+        font-style: normal;
+    }

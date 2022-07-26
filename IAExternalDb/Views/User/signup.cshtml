@@ -1,0 +1,55 @@
+﻿@model IAExternalDb.Models.User
+@using IAExternalDb.Models
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>signUp</title>
+    <link rel="stylesheet" href="~/Content/myCSS/SignUp.css" />
+</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="logindiv">
+        <img id="Logo" src="~/Images/SitePic/amoguscat.jpg" />
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Fname, new { htmlAttributes = new { placeholder = "First Name" } })
+            @Html.ValidationMessageFor(model => model.Fname)
+        </div>
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Lname, new { htmlAttributes = new { placeholder = "Last Name" } })
+            @Html.ValidationMessageFor(model => model.Lname)
+        </div>
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Email" } })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new {type = "password", placeholder = "Password" } })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { placeholder = "Mobile Number" } })
+            @Html.ValidationMessageFor(model => model.Telephone)
+        </div>
+        <div class="ASPinput">
+            @Html.DropDownListFor(model => model.gender, new SelectList(Enum.GetValues(typeof(Gender)), "Select Gender"))
+            @Html.ValidationMessageFor(model => model.gender)
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <div class="BottomDiv">
+        <p>Already registered? @Html.ActionLink("Sign in", "login", "User")</p>
+    </div>
+}

@@ -1,0 +1,34 @@
+﻿@model IAExternalDb.Models.Post
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>addPost</title>
+    <link rel="stylesheet" href="~/Content/myCSS/addPost.css" />
+</head>
+@using (Html.BeginForm("addPost", "Post", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="MainContainer">
+        <p style="margin-top: -1px;">Caption</p>
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Caption, new { htmlAttributes = new { placeholder = "Caption" } })
+            @Html.ValidationMessageFor(model => model.Caption)
+        </div>
+        <div class="UploadImageContainer">
+            <input class="custom-file-upload" id="file" type="file" name="file" style="padding-top: 20px;" />
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input style="margin-top: 20px;
+    margin-left: 110px;" type="submit" value="Save Changes" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+}

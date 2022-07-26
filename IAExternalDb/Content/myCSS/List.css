@@ -1,0 +1,44 @@
+﻿.MainContainer {
+    background: #00b4b4;
+    width: 500px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    margin: auto;
+}
+
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ListHeader {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-family:fantasy;
+    font-size:25px;
+}
+
+.ListEntry {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 20px;
+    font-size:20px;
+}
+
+.entryImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.entryText {
+    margin-top: 16px;
+    float: right;
+    font-weight: 400;
+    font-family: fantasy;
+}
+}

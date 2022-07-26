@@ -1,0 +1,21 @@
+﻿@model IEnumerable<IAExternalDb.Models.User>
+@{
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" href="~/Content/myCSS/List.css" />
+</head>
+@{
+    Html.RenderPartial("Header", Session["CurrentUser"] as IAExternalDb.Models.User);
+}
+<div class="MainContainer">
+    <p class="ListHeader">Search Results</p>
+    <hr>
+    @foreach (var entry in Model)
+    {
+        <div class="ListEntry">
+            <img class="entryImage" src="~/Images/ProfilePictures/@entry.ProfilePicture" />
+           <a href="~/Profile/UserProfile/@entry.user_id" ><p class="entryText">@entry.Fname @entry.Lname</p> </a>
+        </div>
+    }
+</div>

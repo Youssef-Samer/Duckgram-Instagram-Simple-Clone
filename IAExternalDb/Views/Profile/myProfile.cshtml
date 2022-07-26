@@ -1,0 +1,186 @@
+﻿@model IAExternalDb.Models.User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+    <meta charset="utf-8">
+    <title>My Profile</title>
+
+    <style type="text/css">
+        body {
+            background: #121212;
+            font-family: arial;
+            color: #deebde;
+            margin: 0;
+        }
+
+        .clear {
+            clear: left
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+                /* Change the link color to #111 (black) on hover */
+                li a:hover {
+                    background-color: #111;
+                }
+
+        .centerImage {
+            margin-left: 35%;
+            padding-top: 40px;
+            width: 30%;
+            width: 180px;
+            height =180px;
+        }
+
+        .centerText {
+            margin-left: 48%;
+            margin-top: 40px;
+            font-family: fantasy;
+            font-size: 30px;
+        }
+
+        .addbutton {
+            margin-left: 0%;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            font-family: fantasy;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .numberOfPostsFollowing {
+            margin-left: 49%;
+            font-family: fantasy;
+            font-size: 19px;
+        }
+
+        .Title {
+            padding-bottom: 70px;
+        }
+
+        .description {
+            margin-left: 48%;
+            font-family: bold sans serif;
+            font-size: 15px;
+        }
+
+        .gallery {
+            display: table;
+            margin-left: 15%;
+        }
+
+        .image {
+            display: inline-grid;
+            justify-content: center;
+            border-radius: 50px;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+        }
+
+        hr {
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid rgb(255 255 255);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: 230px;
+            margin-right: 230px;
+        }
+        a {
+            text-decoration-line: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    @{
+        Html.RenderPartial("Header", Session["CurrentUser"] as IAExternalDb.Models.User);
+        //Html.RenderPartial("Header", Model.allUsers.ToList().SingleOrDefault(x => x.user_id == Int32.Parse(Session["CurrentUser"].ToString())));
+    }
+
+    <div class="Title">
+
+        <div class="centerImage"><img src="~/Images/ProfilePictures/@Model.ProfilePicture" width="180" height="180" style="float:left; border-radius: 50%;"></div>
+        <div class="centerText">
+            @Model.Fname @Model.Lname
+            <button class="addbutton" type="button"><a href="/Profile/EditProfile">Edit Profile</a></button>
+        </div>
+        <div class="numberOfPostsFollowing">@Model.PostsList.Count posts &nbsp;<a href="/Profile/ShowFollowers/@Model.user_id"> @Model.FollowersList.Count follower</a> &nbsp; <a href="/Profile/ShowFollowing/@Model.user_id">@Model.FollowingList.Count following</a></div> <br>
+        <div class="description"> @Model.Bio </div>
+
+    </div>
+
+    <div>
+        <hr>
+    </div>
+
+    <div class="gallery">
+
+        @for (ViewBag.i = 0; ViewBag.i < Model.PostsList.Count; ViewBag.i += 3)
+        {
+
+            if (ViewBag.i % 3 == 0 && (ViewBag.i + 3 <= Model.PostsList.Count))
+
+            {
+                <div>
+                    <a href="/Post/showPost/@Model.PostsList.ToList()[ViewBag.i].id"><img src="~/Images/Posts/@Model.PostsList.ToList()[ViewBag.i].PostImage" class="image"></a>
+                    <a href="/Post/showPost/@Model.PostsList.ToList()[ViewBag.i+1].id"><img src="~/Images/Posts/@Model.PostsList.ToList()[ViewBag.i+1].PostImage" class="image"></a>
+                    <a href="/Post/showPost/@Model.PostsList.ToList()[ViewBag.i+2].id"><img src="~/Images/Posts/@Model.PostsList.ToList()[ViewBag.i+2].PostImage" class="image"></a>
+
+                </div>
+            }
+            else
+            { break; }
+
+        }
+
+        @if (ViewBag.i == Model.PostsList.Count)
+        { }
+
+        else if (ViewBag.i + 1 == Model.PostsList.Count)
+        {<div><a href="/Post/showPost/@Model.PostsList.ToList()[ViewBag.i].id"><img src="~/Images/Posts/@Model.PostsList.ToList()[ViewBag.i].PostImage" class="image"></a></div>}
+
+        else if (ViewBag.i + 2 == Model.PostsList.Count)
+        { <div>
+
+                <a href="/Post/showPost/@Model.PostsList.ToList()[ViewBag.i].id"><img src="~/Images/Posts/@Model.PostsList.ToList()[ViewBag.i].PostImage" class="image"></a>
+                <a href="/Post/showPost/@Model.PostsList.ToList()[ViewBag.i+1].id"><img src="~/Images/Posts/@Model.PostsList.ToList()[ViewBag.i+1].PostImage" class="image"></a>
+
+            </div>}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿
+* {
+    margin: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+
+.HeaderContainer {
+    background: #121212;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 300px;
+    border-bottom: 3px solid #00b400;
+    padding-right: 300px;
+    position: sticky;
+    top: 0;
+}
+
+    .HeaderContainer * {
+        display: inline;
+    }
+
+#Logo {
+    height: 46px;
+    width: 55px;
+}
+
+#LogoText {
+    height: 30px;
+    margin-left: 12px;
+}
+
+#ProfilePic {
+    width: 41px;
+    height: 42px;
+    border-radius: 50px;
+}
+
+#HomeLogo {
+    margin-bottom: 2px;
+    margin-right: 15px;
+}
+
+.LogosContainer {
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+}
+
+    .LogosContainer img {
+        width: 35px;
+        height: 35px;
+    }

@@ -1,0 +1,64 @@
+﻿@model IAExternalDb.Models.Post
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Post</title>
+    <link rel="stylesheet" href="~/Content/myCSS/Post.css">
+</head>
+<body class="flow">
+
+    <div class="container">
+        <div class="mid-content">
+            <a>
+                <div class="img-content">
+                    <img src="~/Images/Posts/@Model.PostImage" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="bottom-content">
+            <div class="left">
+                <div class="icons flow">
+                    <div class="heart icon">
+                        <a class="iconCO"><img src="~/Images/SitePic/dislike.png" /></a>
+                    </div>
+                    <div class="comment icon">
+                        <a class="iconCO"><img src="~/Images/SitePic/like.png" /></a>
+                    </div>
+                </div>
+                <div class="profile-details flow">
+                    <p> <span>@Model.LikesList.Count Likes</span></p>
+                    <p><span>@Model.DislikesList.Count Dislikes</span></p>
+                </div>
+                @foreach (var x in Model.CommentList)
+                {
+                    <div class="comment-place">
+
+                        <span class="name"> @x.owner_name @x.text</span>
+
+                       
+                    </div>
+                 }
+                </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="comment-section">
+            <div class="search">
+                <input type="text" placeholder="Add a comment...">
+            </div>
+            <div class="post">
+                Post
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

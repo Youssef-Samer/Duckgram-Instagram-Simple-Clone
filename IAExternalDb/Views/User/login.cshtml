@@ -1,0 +1,36 @@
+﻿@model IAExternalDb.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/myCSS/Signin.css" />
+    <title>login</title>
+</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="logindiv">
+        <img id="Logo" src="~/Images/SitePic/amoguscat.jpg" />
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "Email" } })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="ASPinput">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { placeholder = "Password" } })
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <p id="Warning">@TempData["ResultMessage"]</p>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <div class="BottomDiv">
+        <p>Dont Have an Account ? @Html.ActionLink("Sign Up", "signup", "User")</p>
+    </div>
+}

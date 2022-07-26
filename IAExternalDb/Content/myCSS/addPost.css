@@ -1,0 +1,50 @@
+﻿
+p {
+    margin-bottom: 7px;
+    margin-top: -1px;
+    font-weight: 400;
+    font-family: system-ui;
+
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-style: italic;
+}
+
+.UploadImageContainer {
+    margin-top: 7px;
+}
+
+.ASPinput input.text-box, select {
+    background: #f0f0f0;
+    margin-bottom: 10px;
+    color: #464646;
+    font-size: 14px;
+    border-radius: 2px;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+input:not(input[type="submit"]) {
+    outline: none;
+    background-color: #eeeeee;
+    border: 1px solid #9b9b9b;
+    width: 300px;
+    height: 35px;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+.MainContainer {
+    padding-left: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    width: 400px;
+    background-color: antiquewhite;
+}

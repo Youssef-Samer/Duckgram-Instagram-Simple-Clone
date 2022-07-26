@@ -1,0 +1,100 @@
+﻿body {
+    background-color: #181818;
+    position: unset;
+}
+
+.MainDiv {
+    background-color: #1e1e1e;
+    min-height: 250px;
+    margin-right: 300px;
+    margin-left: 300px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border: 2px solid #363636;
+}
+
+.ImageContainer {
+    width: 150px;
+    height: 150px;
+    margin-left: 90px;
+    padding: 1px;
+}
+
+.InfoContainer {
+    width: 525px;
+    height: auto;
+    min-height: 151px;
+    margin-top: -152.3px;
+    margin-left: 289px;
+    padding: 0.5px 20px 2px 30px;
+    text-align: left;
+}
+
+.ProfileImage {
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+    margin-left: 60px;
+}
+
+
+#FollowerCont {
+    margin-left: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-family: system-ui;
+    font-style: italic;
+}
+
+#FollowingCont {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-family: system-ui;
+    font-style: italic;
+}
+
+hr {
+    margin-left: 85px;
+    margin-right: 80px;
+}
+
+.Bio {
+    margin-left: 7px;
+    color: white;
+    margin-top: 18px;
+    font-family: system-ui;
+    font-weight: 100;
+}
+
+.PostsContainer {
+    background-color: aqua;
+    min-height: 250px;
+    margin-left: 86px;
+    margin-right: 80px;
+    display: grid;
+    grid-template-columns: 247.2px 247.2px 245px;
+}
+
+.ImagePostContainer {
+    height: 239px;
+    width: 239px;
+    margin-bottom: 10px;
+}
+
+.PostImage {
+    height: 239px;
+    width: 239px;
+}
+
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top:15px;
+    margin-bottom:15px;
+}

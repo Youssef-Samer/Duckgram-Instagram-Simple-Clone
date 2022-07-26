@@ -1,0 +1,48 @@
+﻿@model IAExternalDb.Models.User
+
+@{
+    Layout = null;
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="~/Content/myCSS/Edit.css" />
+</head>
+@using (Html.BeginForm("EditProfile","Profile",null,FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="logindiv">
+    <img id="Logo" src="~/Images/SitePic/amoguscat.jpg" />
+    <p style="margin-top: -1px;">First Name</p>
+    <div class="ASPinput">
+        @Html.EditorFor(model => model.Fname, new { htmlAttributes = new { placeholder = "First Name" } })
+        @Html.ValidationMessageFor(model => model.Fname)
+    </div>
+    <p style="margin-top: -1px;">Last Name</p>
+    <div class="ASPinput">
+        @Html.EditorFor(model => model.Lname, new { htmlAttributes = new { placeholder = "Last Name" } })
+        @Html.ValidationMessageFor(model => model.Lname)
+    </div>
+    <p style="margin-top: -1px;">Password</p>
+    <div class="ASPinput">
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { type = "password", placeholder = "Password" } })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <p style="margin-top: -1px;">Telephone</p>
+    <div class="ASPinput">
+        @Html.EditorFor(model => model.Telephone, new { htmlAttributes = new { placeholder = "Mobile Number" } })
+        @Html.ValidationMessageFor(model => model.Telephone)
+    </div>
+    <div class="UploadImageContainer">
+        <input id="file" type="file" name="file" />
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save Changes" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,21 @@
+﻿@model IAExternalDb.Models.User
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/myCSS/Header.css" />
+</head>
+<body>
+    <div class="HeaderContainer">
+        <img id="Logo" src="~/Images/SitePic/logo.png" />
+        <img id="LogoText" src="~/Images/SitePic/logotext.png" />
+        <div class="LogosContainer">
+            <a href=""><img id="HomeLogo" src="~/Images/SitePic/home.png" /></a>
+            <a href="/Profile/myProfile"><img id="ProfilePic" src="~/Images/ProfilePictures/@Model.ProfilePicture" /></a>
+        </div>
+    </div>
+</body>
+</html>
+
